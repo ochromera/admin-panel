@@ -20,6 +20,7 @@ const Topbar = () => {
                  backgroundColor={colors.primary[500]}
                  borderRadius="3px"
             >
+                {/*использовать use Ref*/}
                 <InputBase
                     sx={{
                         ml: 2,
@@ -50,7 +51,7 @@ const Topbar = () => {
                     <SettingsOutlinedIcon/>
                 </IconButton>
                 <Box>
-                    {/* open modal  USER */}
+                    {/* open modal  portfolio  */}
                     <IconButton type="button"
                         sx={{
                         padding:'0'

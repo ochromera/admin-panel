@@ -81,14 +81,14 @@ const Sidebar = () => {
                                 admin extended dark
                             </Typography>
                         </Box>
-                    </Box>
+
                     {/*Buttons menu*/}
                     <Box sx={{
                         margin: "40px 0 0 16px"
                     }}>
                         {/*Button mail*/}
                         <IconButton>
-                            <MailOutlineOutlined />
+                            <MailOutlineOutlined/>
                         </IconButton>
                         {/*Button notification*/}
                         <IconButton>
@@ -98,6 +98,7 @@ const Sidebar = () => {
                         <IconButton>
                             <TaskOutlined/>
                         </IconButton>
+                    </Box>
                     </Box>
                     <Box sx={{
                         marginTop:"20px"

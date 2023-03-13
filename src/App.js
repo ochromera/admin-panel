@@ -16,6 +16,7 @@ import Graphics from "./scenes/graphics";
 import PhotoGallery from "./scenes/gallery";
 import Calendar from "./scenes/calendar";
 import SamplePage from "./scenes/pages";
+import Error from"./scenes/error";
 
 import './App.css';
 
@@ -42,6 +43,7 @@ function App() {
                            <Route path="/photoGallery" element={<PhotoGallery />}/>
                            <Route path="/calendar" element={<Calendar />}/>
                            <Route path="/samplePage" element={<SamplePage />}/>
+                           <Route path='/*' element={<Error/>}/>
                        </Routes>
                    </main>
                 </div>
