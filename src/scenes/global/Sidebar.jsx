@@ -1,9 +1,9 @@
-import {useState} from "react";
-import {Menu, MenuItem, ProSidebar} from "react-pro-sidebar";
-import {Link} from "react-router-dom";
+import { useState } from "react";
+import { Menu, MenuItem, ProSidebar } from "react-pro-sidebar";
+import { Link } from "react-router-dom";
 import "react-pro-sidebar/dist/css/styles.css";
-import {tokens} from "../../theme";
-import {Box, IconButton, Typography, useTheme} from "@mui/material";
+import { tokens } from "../../theme";
+import { Box, IconButton, Typography, useTheme } from "@mui/material";
 
 import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
 import HistoryEduOutlinedIcon from "@mui/icons-material/HistoryEduOutlined";
@@ -23,6 +23,7 @@ import TaskOutlined from "@mui/icons-material/TaskOutlined";
 const Item = ({title, to, icon, selected, setSelected}) => {
     const theme = useTheme();
     const colors = tokens(theme.palette.mode);
+
     return (
         <MenuItem active={selected === title}
                   style={{color: colors.blueAccent[100]}}

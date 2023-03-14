@@ -1,7 +1,8 @@
 import React from 'react';
-import {Box, useTheme} from "@mui/material";
+import {Box,Container,useTheme} from "@mui/material";
 import Header from "../../components/header/Header";
 import {tokens} from "../../theme";
+import Chart from "../../components/chart";
 
 const Dashboard = () => {
     const theme = useTheme();
@@ -14,6 +15,9 @@ const Dashboard = () => {
                  sx={{color:`${colors.blueAccent[100]}`}}
             >
             <Header title='DASHBOARD' subtitle="Welcome to the unique Material Admin Extended Dark web app experience!"/>
+            </Box>
+            <Box>
+                <Chart/>
             </Box>
         </Box>
     );
