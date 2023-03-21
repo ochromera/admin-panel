@@ -1,10 +1,11 @@
 import React from 'react';
+import {Box,Typography} from "@mui/material";
 
 const Graphics = () => {
     return (
-        <div>
-            graphics
-        </div>
+        <Box>
+            <Typography>Charts and Maps </Typography>
+        </Box>
     );
 };
 

@@ -1,15 +1,14 @@
 import React from 'react';
 import {Box, Typography} from "@mui/material";
 
-const SamplePages = () => {
+const WModal = () => {
     return (
         <Box>
             <Typography>
-                SamplePages
+                User Modal
             </Typography>
-
         </Box>
     );
 };
 
-export default SamplePages;
+export default WModal;

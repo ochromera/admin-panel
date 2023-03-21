@@ -1,4 +1,4 @@
-import {useState} from "react";
+import React, {useState} from "react";
 import {Menu, MenuItem, ProSidebar} from "react-pro-sidebar";
 import {Link} from "react-router-dom";
 import "react-pro-sidebar/dist/css/styles.css";
@@ -20,9 +20,11 @@ import MailOutlineOutlined from "@mui/icons-material/MailOutlineOutlined";
 import NotificationsNoneOutlined from "@mui/icons-material/NotificationsNoneOutlined";
 import TaskOutlined from "@mui/icons-material/TaskOutlined";
 
+
 const Item = ({title, to, icon, selected, setSelected}) => {
     const theme = useTheme();
     const colors = tokens(theme.palette.mode);
+
     return (
         <MenuItem active={selected === title}
                   style={{color: colors.blueAccent[100]}}
@@ -39,7 +41,9 @@ const Item = ({title, to, icon, selected, setSelected}) => {
 const Sidebar = () => {
     const theme = useTheme();
     const colors = tokens(theme.palette.mode)
-    const [selected, setSelected] = useState("Dashboard");
+    const [selected, setSelected] = useState("Sidebar");
+
+
     return (
         <Box
             sx={{
@@ -62,51 +66,49 @@ const Sidebar = () => {
                 <Menu>
                     {/*LOGO*/}
                     <Box sx={{
-                        color:`${colors.whiteAccent[100]}`
+                        color: `${colors.whiteAccent[100]}`
                     }}>
                         <Box textAlign="start"
                              sx={{
                                  margin: "10px 0 0 20px",
                              }}
                         >
-                            <Typography variant='h4' sx={{
-
-                            }}>
+                            <Typography variant='h4'>
                                 Material
                             </Typography>
                             <Typography variant="h6"
                                         noWrap
-
                             >
                                 admin extended dark
                             </Typography>
                         </Box>
+
+                        {/*Buttons sidebar menu*/}
+                        <Box sx={{
+                            margin: "40px 0 0 16px"
+                        }}>
+                            {/*Button mail*/}
+                            <IconButton>
+                                <MailOutlineOutlined/>
+                            </IconButton>
+                            {/*Button notification*/}
+                            <IconButton>
+                                <NotificationsNoneOutlined/>
+                            </IconButton>
+                            {/*Button task*/}
+                            <IconButton>
+                                <TaskOutlined/>
+                            </IconButton>
+                        </Box>
                     </Box>
-                    {/*Buttons menu*/}
                     <Box sx={{
-                        margin: "40px 0 0 16px"
-                    }}>
-                        {/*Button mail*/}
-                        <IconButton>
-                            <MailOutlineOutlined />
-                        </IconButton>
-                        {/*Button notification*/}
-                        <IconButton>
-                            <NotificationsNoneOutlined/>
-                        </IconButton>
-                        {/*Button task*/}
-                        <IconButton>
-                            <TaskOutlined/>
-                        </IconButton>
-                    </Box>
-                    <Box sx={{
-                        marginTop:"20px"
+                        marginTop: "20px"
                     }}>
                         <Item
                             title="Dashboard"
                             to="/"
                             icon={<HomeOutlinedIcon sx={{
-                                color:`${colors.blueAccent[500]}`
+                                color: `${colors.blueAccent[500]}`
                             }}
                             />
                             }
@@ -117,7 +119,7 @@ const Sidebar = () => {
                             title="Typography"
                             to="/typography"
                             icon={<HistoryEduOutlinedIcon sx={{
-                                color:`${colors.pinkAccent[500]}`
+                                color: `${colors.pinkAccent[500]}`
                             }}/>}
                             selected={selected}
                             setSelected={setSelected}
@@ -127,7 +129,7 @@ const Sidebar = () => {
                             to="/widgets"
                             icon={<WidgetsOutlinedIcon
                                 sx={{
-                                    color:`${colors.greenAccent[500]}`
+                                    color: `${colors.greenAccent[500]}`
                                 }}
                             />}
                             selected={selected}
@@ -138,7 +140,7 @@ const Sidebar = () => {
                             to="/tables"
                             icon={<TableChartOutlinedIcon
                                 sx={{
-                                    color:`${colors.yellowAccent[500]}`
+                                    color: `${colors.yellowAccent[500]}`
                                 }}
                             />}
                             selected={selected}
@@ -149,7 +151,7 @@ const Sidebar = () => {
                             to="/forms"
                             icon={<FeedOutlinedIcon
                                 sx={{
-                                    color:`${colors.purpleAccent[500]}`
+                                    color: `${colors.purpleAccent[500]}`
                                 }}
                             />}
                             selected={selected}
@@ -160,7 +162,7 @@ const Sidebar = () => {
                             to="/userInterface"
                             icon={<OpenInBrowserOutlinedIcon
                                 sx={{
-                                    color:`${colors.greenAccent[400]}`
+                                    color: `${colors.greenAccent[400]}`
                                 }}
                             />}
                             selected={selected}
@@ -171,7 +173,7 @@ const Sidebar = () => {
                             to="/javascriptComponents"
                             icon={<TerminalOutlinedIcon
                                 sx={{
-                                    color:`${colors.pinkAccent[600]}`
+                                    color: `${colors.pinkAccent[600]}`
                                 }}
                             />}
                             selected={selected}
@@ -182,7 +184,7 @@ const Sidebar = () => {
                             to="/graphics"
                             icon={<TrendingUpOutlinedIcon
                                 sx={{
-                                    color:`${colors.greenAccent[600]}`
+                                    color: `${colors.greenAccent[600]}`
                                 }}
                             />}
                             selected={selected}
@@ -193,7 +195,7 @@ const Sidebar = () => {
                             to="/photoGallery"
                             icon={<CollectionsOutlinedIcon
                                 sx={{
-                                    color:`${colors.blueAccent[300]}`
+                                    color: `${colors.blueAccent[300]}`
                                 }}
                             />}
                             selected={selected}
@@ -204,7 +206,7 @@ const Sidebar = () => {
                             to="/calendar"
                             icon={<CalendarTodayOutlinedIcon
                                 sx={{
-                                    color:`${colors.greenAccent[400]}`
+                                    color: `${colors.greenAccent[400]}`
                                 }}
                             />}
                             selected={selected}
@@ -215,9 +217,10 @@ const Sidebar = () => {
                             to="/samplePage"
                             icon={<PagesOutlinedIcon
                                 sx={{
-                                    color:`${colors.pinkAccent[400]}`
+                                    color: `${colors.pinkAccent[400]}`
                                 }}
-                            />}
+                            />
+                            }
                             selected={selected}
                             setSelected={setSelected}
                         />

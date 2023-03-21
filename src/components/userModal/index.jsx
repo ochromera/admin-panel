@@ -1,15 +1,15 @@
 import React from 'react';
 import {Box, Typography} from "@mui/material";
 
-const SamplePages = () => {
+const UModal = () => {
     return (
         <Box>
             <Typography>
-                SamplePages
+                User Modal
             </Typography>
 
         </Box>
     );
 };
 
-export default SamplePages;
+export default UModal;

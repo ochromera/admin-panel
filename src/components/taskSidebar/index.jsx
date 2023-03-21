@@ -1,15 +1,14 @@
 import React from 'react';
-import {Box, Typography} from "@mui/material";
+import {Box, Typography } from "@mui/material";
 
-const SamplePages = () => {
+const RSidebar = () => {
     return (
         <Box>
             <Typography>
-                SamplePages
+                RSidebar
             </Typography>
-
         </Box>
     );
 };
 
-export default SamplePages;
+export default RSidebar;
