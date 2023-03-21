@@ -4,7 +4,7 @@ import {Box,Typography} from "@mui/material";
 const Graphics = () => {
     return (
         <Box>
-            <Typography>Graphics</Typography>
+            <Typography>Charts and Maps </Typography>
         </Box>
     );
 };

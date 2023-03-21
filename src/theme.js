@@ -4,6 +4,7 @@ import {createTheme} from "@mui/material";
 export const tokens = (mode) => ({
     ...(mode === 'dark'
             ? {
+        //основной цвет
                 primary: {
                     100: "#d2d4d6",
                     200: "#a5aaad",
@@ -169,13 +170,13 @@ export const tokens = (mode) => ({
 // mui theme settings
 export const themeSettings = (mode) => {
     const colors = tokens(mode);
-
     return {
         palette: {
             mode: mode,
             ...(mode === 'dark'
                 ? {
-                    primary: {
+                // palette values for dark mode
+                primary: {
                         main: colors.primary[500],
                     },
                     secondary: {
@@ -190,6 +191,7 @@ export const themeSettings = (mode) => {
                         default: colors.primary[500],
                     }
                 } : {
+                // palette values for light mode
                     primary: {
                         main: colors.primary[100],
                     },
@@ -237,10 +239,26 @@ export const themeSettings = (mode) => {
     };
 
 };
+
+//screen sizes and breakpoints
+
+export const BreakPointTheme = createTheme({
+    breakpoints: {
+        values: {
+            xs: 0,
+            sm: 600,
+            md: 960,
+            lg: 1280,
+            xl: 1920,
+        },
+    },
+})
+
+
+
 //context for color  mode
 export const ColorModeContext = createContext({
-    toggleColorMode: () => {
-    }
+    toggleColorMode: () => {}
 });
 export const useMode = () => {
     const [mode, setMode] = useState("dark");
@@ -254,4 +272,4 @@ export const useMode = () => {
     );
     const theme = useMemo(() => createTheme(themeSettings(mode)), [mode]);
     return [theme, colorMode]
-}
+};
