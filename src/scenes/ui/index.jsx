@@ -1,10 +1,12 @@
 import React from 'react';
+import {Box} from "@mui/material";
+import Header from "../../components/header/Header";
 
 const UserInterface = () => {
     return (
-        <div>
-            UserInterface
-        </div>
+        <Box>
+            <Header title='Welcome to User Interface' subtitle=""/>
+        </Box>
     );
 };
 

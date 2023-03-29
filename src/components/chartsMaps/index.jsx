@@ -18,6 +18,14 @@ import ImageGoldenGate from "../../assets/golden-gate.jpg";
 *
 *  */
 
+// const items = Array.from(
+//     {length:100},
+//     (_,)=> index +1
+// );
+
+
+
+
 const options = {
     title: {
         text: 'My chart'
@@ -102,6 +110,7 @@ const Chart = (props) => {
                         />
                     </Grid>
                     <Grid>
+                        {/* Изменение и настройка картинки */}
                         <Image alt="Golden Gate"
                                src={ImageGoldenGate}
                         />
