@@ -34,67 +34,89 @@ export const dataItems = [
         id: 0,
         title: "Dashboard",
         path: "/",
-        icon: <HomeOutlinedIcon/>,
+        icon: <HomeOutlinedIcon sx={{
+            color: '#25a0d5'
+        }}/>,
     },
     {
         id: 1,
         title: "Typography",
         path: "/typography",
-        icon: <HistoryEduOutlinedIcon/>,
+        icon: <HistoryEduOutlinedIcon
+            sx={{color: '#883438'}}
+        />,
     },
     {
         id: 2,
         title: "Widgets",
         path: "/widgets",
-        icon: <WidgetsOutlinedIcon/>,
+        icon: <WidgetsOutlinedIcon
+            sx={{color: '#267846'}}
+        />,
     },
     {
         id: 3,
         title: "Tables",
         path: "/tables",
-        icon: <TableChartOutlinedIcon/>,
+        icon: <TableChartOutlinedIcon
+            sx={{color: '#9f822b'}}
+        />,
     },
     {
         id: 4,
         title: "Forms",
         path: "/forms",
-        icon: <FeedOutlinedIcon/>,
+        icon: <FeedOutlinedIcon
+            sx={{color: '#593c5b'}}
+        />,
     },
     {
         id: 5,
         title: "User Interface",
         path: "/userInterface",
-        icon: <OpenInBrowserOutlinedIcon/>,
+        icon: <OpenInBrowserOutlinedIcon
+            sx={{color: '#129678'}}
+        />,
     },
     {
         id: 6,
         title: "Javascript Components",
         path: "/javascriptComponents",
-        icon: <TerminalOutlinedIcon/>,
+        icon: <TerminalOutlinedIcon
+            sx={{color: '#822746'}}
+        />,
     },
     {
         id: 7,
         title: "Charts and Maps",
         path: "/graphics",
-        icon: <TrendingUpOutlinedIcon/>,
+        icon: <TrendingUpOutlinedIcon
+            sx={{color: '#5f8643'}}
+        />,
     },
     {
         id: 8,
         title: "Photo Gallery",
         path: "/photoGallery",
-        icon: <CollectionsOutlinedIcon/>,
+        icon: <CollectionsOutlinedIcon
+            sx={{color: '#246d80'}}
+        />,
     },
     {
         id: 9,
         title: "Calendar",
         path: "/calendar",
-        icon: <CalendarTodayOutlinedIcon/>,
+        icon: <CalendarTodayOutlinedIcon
+            sx={{color: '#278459'}}
+        />,
     },
     {
         id: 10,
         title: "Sample Pages",
         path: "/samplePage",
-        icon: <PagesOutlinedIcon/>,
+        icon: <PagesOutlinedIcon
+            sx={{color: '#88432c'}}
+        />,
     }
 ]
 
@@ -137,27 +159,31 @@ const Sidebar = () => {
                     </IconButton>
                 </Box>
             </Box>
-                {dataItems.map((item, index) => {
-                        const {icon, link, id} = item;
-                        return (
-                            <List  key={item.id}>
+            {dataItems.map((item, index) => {
+                    // const {icon, link, id} = item;
+                    return (
+                        <List key={item.id}>
                             <ListItem button
                                       component={Link}
                                       to={item.path}
                             >
                                 <ListItemButton>
-                                    <ListItemIcon>
+                                    <ListItemIcon  sx={{
+                                        alignItems:"center",
+                                    }}>
                                         {item.icon}
-                                        <ListItemText>
+                                        <ListItemText sx={{
+                                            marginLeft:"10px",
+                                        }}>
                                             {item.title}
                                         </ListItemText>
                                     </ListItemIcon>
                                 </ListItemButton>
                             </ListItem>
-                            </List>
-                        );
-                    }
-                )}
+                        </List>
+                    );
+                }
+            )}
         </Box>
     );
 };
