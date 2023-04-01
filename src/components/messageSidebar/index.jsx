@@ -1,20 +1,21 @@
-import React from 'react';
-import {Box, IconButton, Typography, useTheme} from "@mui/material";
+import React,{useState}  from 'react';
+import {Box, IconButton, useTheme} from "@mui/material";
 import KeyboardBackspaceOutlinedIcon from "@mui/icons-material/KeyboardBackspaceOutlined";
 import AddCircleOutlineOutlinedIcon from "@mui/icons-material/AddCircleOutlineOutlined";
-import {Menu, ProSidebar} from 'react-pro-sidebar';
+import {Menu, ProSidebar,MenuItem,} from 'react-pro-sidebar';
 
 import "react-pro-sidebar/dist/css/styles.css";
 import {tokens} from "../../theme";
+import Header from "../header/Header";
 
 
 const MSidebar = () => {
     const theme = useTheme();
     const colors = tokens(theme.palette.mode);
 
+
     return (
         <Box sx={{
-            backgroundColor: `${colors.darkGreenAccent[500]} !important`,
             "& .pro-sidebar-inner": {
                 backgroundColor: `${colors.darkGreenAccent[500]} !important`
             },
@@ -30,21 +31,41 @@ const MSidebar = () => {
         }}>
 
 
-            <ProSidebar>
+            <ProSidebar
+                sx={{
+                display: 'flex',
+                    height: "100vh"
+            }}
+
+            >
+                <Box sx={{
+                    display: "flex",
+                    alignItems: "center",
+                    backgroundColor:`${colors.primary[500]}`,
+                }}>
+                    {/*button comeback*/}
+                    <IconButton>
+                        <KeyboardBackspaceOutlinedIcon/>
+                    </IconButton>
+                    <Header title='MESSAGES' subtitle="Unread messages"/>
+                    {/*button closed */}
+                    <IconButton>
+                        <AddCircleOutlineOutlinedIcon/>
+                    </IconButton>
+                </Box>
                 <Menu>
-                    <Box>
-                        <Box>
-                            <Typography>MESSAGES</Typography>
-                            <IconButton>
-                                <KeyboardBackspaceOutlinedIcon/>
-                            </IconButton>
-                            <IconButton>
-                                <AddCircleOutlineOutlinedIcon/>
-                            </IconButton>
-                        </Box>
-                    </Box>
-                    <Box>
-                    </Box>
+                    <MenuItem> Documentation</MenuItem>
+                    <MenuItem> Calendar</MenuItem>
+                    <MenuItem> E-commerce</MenuItem>
+                    <MenuItem> Documentation</MenuItem>
+                    <MenuItem> Calendar</MenuItem>
+                    <MenuItem> E-commerce</MenuItem>
+                    <MenuItem> Documentation</MenuItem>
+                    <MenuItem> Calendar</MenuItem>
+                    <MenuItem> E-commerce</MenuItem>
+                    <MenuItem> Documentation</MenuItem>
+                    <MenuItem> Calendar</MenuItem>
+                    <MenuItem> E-commerce</MenuItem>
                 </Menu>
             </ProSidebar>
         </Box>

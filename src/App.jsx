@@ -14,10 +14,10 @@ import Forms from "./scenes/forms";
 import UserInterface from "./scenes/ui";
 import JavascriptComponents from "./scenes/jscomponents";
 import Graphics from "./scenes/graphics";
-import PhotoGallery from "./scenes/gallery";
+import Gallery from "./scenes/gallery";
 import MuiCalendar from "./scenes/calendar";
 import SamplePage from "./scenes/pages";
-import Error from "./scenes/error";
+import NotFound from "./scenes/notFound";
 
 import './App.css';
 
@@ -43,10 +43,11 @@ function App() {
                             <Route path="/userInterface" element={<UserInterface/>}/>
                             <Route path="/javascriptComponents" element={<JavascriptComponents/>}/>
                             <Route path="/graphics" element={<Graphics/>}/>
-                            <Route path="/photoGallery" element={<PhotoGallery/>}/>
+                            <Route path="/photoGallery" element={<Gallery/>}/>
                             <Route path="/calendar" element={<MuiCalendar/>}/>
                             <Route path="/samplePage" element={<SamplePage/>}/>
-                            <Route path='/*' element={<Error/>}/>
+                            <Route path='/*' element={<NotFound/>}/>
+                        {/* Создать компонент страницы ошибок  с hok useRouteError  */}
                         </Routes>
                     </Box>
                 </Box>
